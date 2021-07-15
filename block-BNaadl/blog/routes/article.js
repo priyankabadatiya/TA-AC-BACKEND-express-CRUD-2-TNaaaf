@@ -24,7 +24,7 @@ router.post('/', (req, res, next) => {
   })
 });
 
-//render a specific article
+//render a article
 router.get('/:id', (req, res, next) => {
   let id = req.params.id;
   Article.findById(id, (err, article) => {
@@ -34,7 +34,7 @@ router.get('/:id', (req, res, next) => {
   })
 });
 
-//render article edit form
+// article edit form
 router.get('/:id/edit', (req, res, next) => {
   let id = req.params.id;
   Article.findById(id, (err, article) => {
@@ -44,7 +44,7 @@ router.get('/:id/edit', (req, res, next) => {
   })
 });
 
-//update specific article
+//update article
 router.post('/:id', (req, res, next) => {
   let id = req.params.id;
   req.body.tags = req.body.tags.trim().split(" ");
@@ -54,7 +54,7 @@ router.post('/:id', (req, res, next) => {
   })
 });
 
-//delete specific article
+//delete article
 
 router.get('/:id/delete', (req, res, next) => {
   let id = req.params.id;
